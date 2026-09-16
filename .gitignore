@@ -1,0 +1,27 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+
+.npmrc
+
+# Capture output
+recordings/
+*.webm
+*.wav
+*.mp3
+*.m4a
+*.ogg
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+*.tgz
