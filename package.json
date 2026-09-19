@@ -1,7 +1,7 @@
 {
   "name": "voicewire",
   "version": "0.1.0",
-  "description": "CLI for browser mic capture, Whisper speech-to-text, and Claude translation.",
+  "description": "CLI for voice capture, speech-to-text, and translation.",
   "license": "MIT",
   "author": "Marina Camacho",
   "repository": {
