@@ -1,10 +1,10 @@
 # Voicewire
 
-**CLI for browser mic capture → Whisper speech-to-text → Claude translation.**
+**CLI for voice capture, speech-to-text, and translation.**
 
-Remote and cloud environments often have no microphone. Voicewire starts a local page so your **browser** captures audio, uploads it to the CLI, then runs **OpenAI Whisper** and **Anthropic Claude**.
+Record in the browser, turn speech into text, and translate it — all from your terminal. Works on your Mac, and also when you’re on a remote machine without a local mic.
 
-Pairs naturally with [Polygit](https://github.com/Minacava/Polygit) when you want voice in and Git-backed translation out.
+Pairs with [Polygit](https://github.com/Minacava/Polygit) when you want voice in and Git-backed translation out.
 
 ---
 
@@ -27,29 +27,32 @@ Requires **Node.js 20+**.
 
 ```bash
 cp .env.example .env
-# OPENAI_API_KEY=...        # Whisper
-# ANTHROPIC_API_KEY=...     # Claude
 ```
+
+Add API keys for the providers you use (see `.env.example`):
+
+- Speech-to-text (OpenAI)
+- Translation (Anthropic)
 
 ---
 
 ## Commands
 
-### Capture in the browser
+### Capture
 
 ```bash
 voicewire capture
 # opens http://127.0.0.1:8787/ — record, then Stop & upload
 ```
 
-### Transcribe with Whisper
+### Transcribe
 
 ```bash
 voicewire transcribe recordings/capture-….webm
 voicewire transcribe ./clip.wav --language es --json
 ```
 
-### Translate with Claude
+### Translate
 
 ```bash
 voicewire translate "Buenos días" --to en
@@ -59,7 +62,7 @@ echo "Hello team" | voicewire translate --to es --from en
 ### Full pipeline
 
 ```bash
-# Capture → Whisper → Claude
+# Capture → transcribe → translate
 voicewire run --to es
 
 # Or reuse an existing file
@@ -78,6 +81,12 @@ import {
   runPipeline,
 } from "voicewire";
 ```
+
+---
+
+## Contributing
+
+Issues and pull requests are welcome. Keep changes focused; open an issue first for larger ideas.
 
 ---
 
